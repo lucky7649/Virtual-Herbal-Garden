@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#img {
+  -webkit-overflow-scrolling: hidden;
+}
+
+@font-face {
+  font-family: t1;
+  src: url(./assets/file1.woff2);
+}
+
+@font-face {
+  font-family: t2;
+  src: url(./assets/file2.woff2);
+}
+
+@font-face {
+  font-family: t3;
+  src: url(./assets/file3.woff2);
+}
+
+@font-face {
+  font-family: t4;
+  src: url(./assets/file4.woff2);
+}
+
+@font-face {
+  font-family: t5;
+  src: url(./assets/file5.woff2);
+}
+
+@font-face {
+  font-family: t6;
+  src: url(./assets/file6.woff2);
+}
+
+/* Hide scrollbars for specific sections */
+.story::-webkit-scrollbar,
+.card::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar for webkit browsers */
+}
+
+.story,
+.card {
+  -ms-overflow-style: none; /* Hide the scrollbar for IE and Edge */
+  scrollbar-width: none; /* Hide the scrollbar for Firefox */
+}

@@ -10,10 +10,14 @@ const authenticateUser = (req, res, next) => {
   try {
     // Verify the token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
+    
+      console.log(decoded);
     // Attach user information to the request
-    req.user = decoded.userId; // Assuming JWT payload has userId
-    req.isAdmin = decoded.isAdmin; // If your JWT has isAdmin, you can use it
+    req.userId = decoded.userId; // Assuming JWT payload has userId
+    req.isAdmin = decoded.isAdmin; 
+    req.token = token;
+   
+    // If your JWT has isAdmin, you can use it
     next();
   } catch (err) {
     return res.status(401).json({ message: "Token is not valid" });

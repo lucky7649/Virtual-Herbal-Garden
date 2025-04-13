@@ -5,43 +5,71 @@ const herbSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
-      unique: true,
-      trim: true,
     },
     scientificName: {
       type: String,
       required: true,
-      trim: true,
     },
     description: {
       type: String,
       required: true,
     },
-    benefits: {
-      type: [String], // Array of strings
-      default: [],
-    },
-    cultivation: {
+    image: {
       type: String,
       required: true,
     },
-    imageUrl: {
+    botanicalInfo: {
       type: String,
-      default: "", // URL to the herb's image (stored in Cloudinary/Supabase)
+      required: true,
     },
-    videoUrl: {
+    physicalDescription: {
       type: String,
-      default: "", // URL to a video related to the herb
+      required: true,
     },
-    createdBy: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      required: true, // Reference to the user who created the herb entry (content creator)
+    habitat: {
+      type: String,
+      required: true,
     },
-    isActive: {
-      type: Boolean,
-      default: true, // To allow admins to hide/deactivate specific herb entries
+    medicinalMethod: {
+      type: String,
+      required: true,
     },
+    conventionalComposition: {
+      type: String,
+      required: true,
+    },
+    chemicalComposition: {
+      type: String,
+      required: true,
+    },
+    pharmacologicalEffect: {
+      type: String,
+      required: true,
+    },
+    clinicalStudies: {
+      type: String,
+      required: true,
+    },
+    safetyPrecautions: {
+      type: String,
+      required: true,
+    },
+    culturalSignificance: {
+      type: String,
+      required: true,
+    },
+    plantSuccess: {
+      type: String,
+      required: true,
+    },
+    referenceLink: {
+      type: String,
+      required: true,
+    },
+    _3DId: {
+      type : String,
+      required: true,
+    }
   },
   {
     timestamps: true, // Adds createdAt and updatedAt fields

@@ -26,7 +26,7 @@ const isContentCreator = async (req, res, next) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    if (user.role !== 'content_creator' && user.role !== 'admin') {
+    if (user.role !== 'content-creator' && user.role !== 'admin') {
       return res.status(403).json({ message: "Access denied. Only Content Creators and Admins can access this" });
     }
 

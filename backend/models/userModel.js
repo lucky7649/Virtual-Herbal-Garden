@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 
+// Import the Herb model for reference
+const Herb = require("./herbModel");
+
 const userSchema = new mongoose.Schema(
   {
     username: {
@@ -21,7 +24,7 @@ const userSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      enum: ["admin", "content_creator", "user"],
+      enum: ["admin", "content-creator", "user"],
       default: "user",
     },
     isActive: {
@@ -32,6 +35,13 @@ const userSchema = new mongoose.Schema(
       type: Date,
       default: Date.now,
     },
+    // Bookmarks array storing references to Herb documents
+    bookmarks: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Herb",
+      },
+    ],
   },
   {
     timestamps: true,
